@@ -1017,3 +1017,7 @@ body {
     padding: 1vh 0.8vw;
   }
 }
+img#usrImg {
+    max-width: 100%;
+    height: 2vh;
+}
