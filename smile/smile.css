@@ -1,0 +1,1019 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500&family=Rubik:wght@300..900&display=swap');
+
+/* =============================================
+   VARIABLES CSS - PALETA DE COLORES Y CONFIGURACIÓN
+   ============================================= */
+:root {
+  /* Tamaños de Fuente Responsive */
+  --fz_xs: .62vw; --fz_xs2: .67vw; --fz_xs3: .72vw;
+  --fz_s: .77vw; --fz_s2: .8vw; --fz_s3: .85vw;
+  --fz_m: .9vw; --fz_m2: .95vw; --fz_m3: 1.0vw;
+  --fz_l: 1.07vw; --fz_l2: 1.15vw; --fz_l3: 1.2vw;
+  --fz_xl: 1.73vw; --fz_xl2: 2.30vw;
+  
+  /* Familias de Fuentes */
+  --ff_pop: 'Poppins', 'Segoe UI', system-ui;
+  --ff_rub: 'Rubik', 'Segoe UI', system-ui;
+  
+  /* Colores Base Universales */
+  --blanc: #fff; 
+  --negr: #000; 
+  --gris: #ddd; 
+  --gris2: #374151;
+  --exito: #3cd741; 
+  --error: #ff3849; 
+  --alert: #ffa726;
+  --infor: #00a8e6; 
+  --oro: #fbbf24; 
+  --oro2: #b45309;
+  
+  /* TEMA DULCE (Rosa/Rojo) - DEFAULT */
+  --bg: #ffccd1;        /* Fondo general rosa suave */
+  --wb: #ffebed;        /* Fondo blanco-rosa para paneles */
+  --tx: #000;           /* Texto principal negro */
+  --txa: #FFF;          /* Texto alternativo blanco */
+  --txe: #000;          /* Texto en inputs negro */
+  --txh: #ff3849;       /* Texto destacado rojo */
+  --bdr: #ff99a1;       /* Bordes rosa */
+  --mco: #ff3849;       /* Color principal rojo */
+  --svg: #ff3849;       /* Iconos SVG rojo */
+  --bxs: #ffdbde;       /* Sombras suaves rosa */
+  --bga: #ff3849;       /* Fondo activo rojo */
+  --hv: #ff7a85;        /* Color hover rosa intermedio */
+  --hva: #ff3849;       /* Hover activo rojo */
+  --bg1: #ffffff61;     /* Transparencia blanca 38% */
+  --bg2: #ff3849;       /* Color secundario rojo */
+  --bg3: #ffccd1;       /* Fondo terciario rosa */
+  --bg4: #374151;       /* Gris oscuro para textos */
+  --bg5: #e6002e;       /* Rojo oscuro */
+  --bg6: #b30024;       /* Rojo muy oscuro */
+  
+  /* Sombras y Transiciones */
+  --somb_m: 0 0 0.3vh 0.1vh var(--blanc);
+  --somb_l: 0 0.4vh 0.8vh rgba(0,0,0,0.15);
+  --trans_l: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  --trans_m: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --trans_r: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* =============================================
+   TEMA CIELO (Azul Claro)
+   ============================================= */
+:root[data-theme="Cielo"] {
+  --bg: #ccefff;        /* Fondo celeste suave */
+  --wb: #e5f7ff;        /* Fondo blanco-celeste */
+  --tx: #000;           /* Texto negro */
+  --txa: #FFF;          /* Texto blanco */
+  --txe: #000;          /* Texto inputs negro */
+  --txh: #1978d7;       /* Texto destacado azul */
+  --bdr: #66d6ff;       /* Bordes celeste */
+  --mco: #1978d7;       /* Color principal azul */
+  --svg: #1978d7;       /* Iconos azul */
+  --bxs: #b8ecff;       /* Sombras celeste */
+  --bga: #166bc0;       /* Fondo activo azul oscuro */
+  --hv: #00a8e6;        /* Hover azul brillante */
+  --hva: #1873cd;       /* Hover activo azul */
+  --bg1: #ffffff26;     /* Transparencia 15% */
+  --bg2: #1978d7;       /* Azul secundario */
+  --bg3: #ccefff;       /* Fondo terciario */
+  --bg4: #374151;       /* Gris oscuro */
+  --bg5: #0094cc;       /* Azul medio */
+  --bg6: #005580;       /* Azul oscuro */
+}
+
+/* =============================================
+   TEMA PAZ (Verde Natural)
+   ============================================= */
+:root[data-theme="Paz"] {
+  --bg: #ccffce;        /* Fondo verde menta */
+  --wb: #ebffeb;        /* Fondo blanco-verde */
+  --tx: #000;           /* Texto negro */
+  --txa: #FFF;          /* Texto blanco */
+  --txe: #000;          /* Texto inputs negro */
+  --txh: #25b62a;       /* Texto destacado verde */
+  --bdr: #96e99a;       /* Bordes verde claro */
+  --mco: #25b62a;       /* Color principal verde */
+  --svg: #25b62a;       /* Iconos verde */
+  --bxs: #c0f2c2;       /* Sombras verde suave */
+  --bga: #00b300;       /* Fondo activo verde intenso */
+  --hv: #3cd741;        /* Hover verde brillante */
+  --hva: #25b62a;       /* Hover activo verde */
+  --bg1: #ffffff42;     /* Transparencia 26% */
+  --bg2: #25b62a;       /* Verde secundario */
+  --bg3: #ccffce;       /* Fondo terciario */
+  --bg4: #374151;       /* Gris oscuro */
+  --bg5: #1a8f1f;       /* Verde medio */
+  --bg6: #0d6611;       /* Verde oscuro */
+}
+
+/* =============================================
+   TEMA MORA (Morado/Púrpura)
+   ============================================= */
+:root[data-theme="Mora"] {
+  --bg: #e4ccff;        /* Fondo lavanda */
+  --wb: #f4ebff;        /* Fondo blanco-lavanda */
+  --tx: #000;           /* Texto negro */
+  --txa: #FFF;          /* Texto blanco */
+  --txe: #000;          /* Texto inputs negro */
+  --txh: #6a00f5;       /* Texto destacado morado */
+  --bdr: #c799ff;       /* Bordes morado claro */
+  --mco: #6a00f5;       /* Color principal morado */
+  --svg: #6a00f5;       /* Iconos morado */
+  --bxs: #ebdbff;       /* Sombras lavanda */
+  --bga: #5800cc;       /* Fondo activo morado oscuro */
+  --hv: #9442ff;        /* Hover morado brillante */
+  --hva: #5f00db;       /* Hover activo morado */
+  --bg1: #ffffff61;     /* Transparencia 38% */
+  --bg2: #6a00f5;       /* Morado secundario */
+  --bg3: #e4ccff;       /* Fondo terciario */
+  --bg4: #374151;       /* Gris oscuro */
+  --bg5: #5000b8;       /* Morado medio */
+  --bg6: #3d008a;       /* Morado oscuro */
+}
+
+/* =============================================
+   TEMA FUTURO (Modo Oscuro Cibernético)
+   ============================================= */
+:root[data-theme="Futuro"] {
+  --bg: #1d273f;        /* Fondo azul oscuro */
+  --wb: #2a385b;        /* Fondo paneles oscuro */
+  --tx: #fff;           /* Texto blanco */
+  --txa: #00f3ff;       /* Texto alternativo cian */
+  --txe: #3e496f;       /* Texto inputs gris azulado */
+  --txh: #00f3ff;       /* Texto destacado cian */
+  --bdr: #007980;       /* Bordes cian oscuro */
+  --mco: #3e496f;       /* Color principal gris azul */
+  --svg: #00f3ff;       /* Iconos cian brillante */
+  --bxs: none;          /* Sin sombras */
+  --bga: #3d5185;       /* Fondo activo azul grisáceo */
+  --hv: #4d5a89;        /* Hover azul medio */
+  --hva: #3e496f;       /* Hover activo */
+  --bg1: #ffffff26;     /* Transparencia 15% */
+  --bg2: #00f3ff;       /* Cian secundario */
+  --bg3: #00f3ff;       /* Cian terciario */
+  --bg4: #00f3ff;       /* Cian para textos */
+  --bg5: #00b8c2;       /* Cian medio */
+  --bg6: #006b73;       /* Cian oscuro */
+}
+
+/* =============================================
+   RESET Y CONFIGURACIÓN BASE
+   ============================================= */
+*, *::before, *::after { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+}
+
+* { 
+  font-family: var(--ff_pop); 
+}
+
+body {
+  background: var(--bg);
+  min-height: 100vh;
+  transition: background-color var(--trans_l);
+  padding-top: 8vh;
+}
+
+/* =============================================
+   HEADER - BARRA SUPERIOR FIJA
+   ============================================= */
+.top-header {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  right: 0;
+  background: var(--mco);
+  box-shadow: 0 0.1vw 0.1vw 0 var(--bga);
+  z-index: 1000; 
+  padding: 1.5vh 2vw;
+}
+
+.header-container {
+  display: flex; 
+  justify-content: space-between;
+  align-items: center; 
+  max-width: 98vw; 
+  margin: 0 auto;
+}
+
+/* Header Izquierda - Título y Selector de Mes */
+.header-left { 
+  display: flex; 
+  align-items: center; 
+  gap: 2vh; 
+}
+
+.header-left h1 {
+  color: var(--txa); 
+  font-weight: 900;
+  font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+  text-shadow: var(--somb_l); 
+  display: flex;
+  align-items: center; 
+  gap: 1vh;
+}
+
+.header-left h1 i { 
+  animation: brillar 2s infinite; 
+}
+
+/* Animación de Brillo del Icono */
+@keyframes brillar {
+  0%, 100% { 
+    color: var(--txa); 
+    filter: drop-shadow(0 0 5px var(--txa)); 
+  }
+  50% { 
+    color: var(--bg); 
+    filter: drop-shadow(0 0 20px var(--bg)); 
+  }
+}
+
+/* Selector de Mes */
+.mes-selector {
+  padding: 0.8vh 1.5vh;
+  background: var(--bg1);
+  border: none;
+  border-radius: 1vh;
+  color: var(--txa);
+  font-weight: 600;
+  font-size: clamp(0.8rem, 0.95vw, 0.9rem);
+  cursor: pointer;
+  transition: all var(--trans_m);
+  font-family: var(--ff_pop);
+}
+
+.mes-selector:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.mes-selector option {
+  background: var(--mco);
+  color: var(--txa);
+}
+
+/* Header Derecha - Botones y Controles */
+.header-right { 
+  display: flex; 
+  gap: 1.5vh; 
+  align-items: center; 
+}
+
+/* Botón de Actualizar/Refresh */
+.btn-refresh {
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  width: 4vh; 
+  height: 4vh;
+  background: var(--bg1);
+  border: none; 
+  border-radius: 50%;
+  color: var(--txa);
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  cursor: pointer;
+  transition: all var(--trans_m);
+}
+
+.btn-refresh:hover {
+  transform: rotate(180deg);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Información del Usuario */
+.user-info {
+  display: flex; 
+  align-items: center; 
+  gap: 0.8vh;
+  padding: 0.8vh 1.5vh; 
+  background: var(--bg1);
+  border-radius: 1vh; 
+  color: var(--txa);
+  font-weight: 600; 
+  font-size: clamp(0.8rem, 0.95vw, 0.9rem);
+  transition: all var(--trans_m);
+}
+
+.user-info:hover {
+  transform: translateY(-0.2vh);
+}
+
+/* Botón Cerrar Sesión */
+.btn-logout {
+  display: flex; 
+  align-items: center; 
+  gap: 0.8vh;
+  padding: 0.8vh 1.5vh; 
+  background: var(--bg1);
+  border: none; 
+  border-radius: 1vh;
+  color: var(--txa); 
+  font-weight: 600;
+  font-size: clamp(0.8rem, 0.95vw, 0.9rem);
+  cursor: pointer; 
+  transition: all var(--trans_m);
+  font-family: var(--ff_pop);
+}
+
+.btn-logout:hover {
+  transform: translateY(-0.2vh);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.btn-logout i {
+  color: var(--txa);
+}
+
+/* Contenedor de Temas */
+.witemas {
+  display: flex; 
+  align-items: center; 
+  gap: 0.8vh;
+  padding: 0.8vh 1.5vh; 
+  background: var(--bg1);
+  border-radius: 1vh;
+}
+
+/* Círculos de Temas */
+.tema {
+  width: 2.2vh; 
+  height: 2.2vh; 
+  border-radius: 50%;
+  cursor: pointer; 
+  transition: all var(--trans_m);
+  border: 2px solid transparent;
+}
+
+.tema:hover, .tema.mtha {
+  box-shadow: var(--somb_m); 
+  transform: scale(1.15);
+  border-color: var(--txa);
+}
+
+/* Colores de los Temas */
+.tema[data-theme="Dulce"] { background: #FF5C69; }
+.tema[data-theme="Cielo"] { background: #0EBEFF; }
+.tema[data-theme="Paz"] { background: #29C72E; }
+.tema[data-theme="Mora"] { background: #7000FF; }
+.tema[data-theme="Futuro"] { background: #21273B; }
+
+/* =============================================
+   CONTENEDOR PRINCIPAL
+   ============================================= */
+.miwp { 
+  max-width: 98vw; 
+  margin: 2vh auto; 
+}
+
+.main-layout {
+  display: grid;
+  grid-template-columns: 65% 1% 34%;
+  gap: 0;
+  margin-bottom: 2vh;
+}
+
+/* Separador Visual entre Paneles */
+.separator {
+  background: linear-gradient(180deg, transparent, var(--bdr), transparent);
+  width: 0.2vw;
+  margin: 0 auto;
+}
+
+/* =============================================
+   PANEL FORMULARIO DE REGISTRO
+   ============================================= */
+.form-panel {
+  background: var(--wb);
+  border-radius: 1.5vh;
+  box-shadow: 0 0.5vh 2vh var(--bdr);
+  overflow: hidden;
+}
+
+.panel-header {
+  background: var(--mco);
+  padding: 1.5vh 2vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.panel-header h2 {
+  color: var(--txa);
+  font-weight: 700;
+  font-size: clamp(1.2rem, 1.5vw, 1.4rem);
+  display: flex;
+  align-items: center;
+  gap: 1vh;
+}
+
+.panel-header h2 i { 
+  color: var(--txa); 
+}
+
+.panel-body { 
+  padding: 2vh 2vw; 
+}
+
+/* Grid del Formulario - 3 Columnas */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2vh 1.5vw;
+  margin-bottom: 2vh;
+}
+
+/* Grupos de Campos del Formulario */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6vh;
+}
+
+.form-group.span-2 { grid-column: span 2; }
+.form-group.span-3 { grid-column: span 3; }
+
+/* Etiquetas de Campos */
+.form-group label {
+  font-weight: 600;
+  font-size: clamp(0.8rem, 0.95vw, 0.9rem);
+  color: var(--bg4);
+  display: flex;
+  align-items: center;
+  gap: 0.6vh;
+}
+
+.form-group label i {
+  color: var(--bg2);
+  font-size: clamp(0.85rem, 1vw, 0.95rem);
+}
+
+/* Inputs, Selects y Textareas */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 1.2vh 1vw;
+  border: 0.25vh solid var(--bdr);
+  border-radius: 1vh;
+  outline: none;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: clamp(0.8rem, 0.95vw, 0.9rem);
+  font-family: var(--ff_pop);
+  font-weight: 500;
+  color: var(--txe);
+  transition: all var(--trans_m);
+}
+
+/* Estado Focus de Inputs */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--mco);
+  box-shadow: 0 0 0 0.3vh var(--bg1);
+  transform: translateY(-0.1vh);
+  background: var(--blanc);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 8vh;
+}
+
+/* Botón Principal de Guardar */
+.btn-save {
+  width: 100%;
+  background: linear-gradient(135deg, var(--bdr) 0%, var(--mco) 100%);
+  color: var(--txa);
+  border: none;
+  padding: 1.5vh 0;
+  border-radius: 1.2vh;
+  font-weight: 700;
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1vh;
+  transition: all var(--trans_m);
+  box-shadow: 0 0.4vh 1.2vh var(--bg);
+}
+
+.btn-save:hover {
+  transform: translateY(-0.3vh);
+  box-shadow: 0 0.6vh 1.8vh var(--bdr);
+}
+
+.btn-save i { 
+  color: var(--txa); 
+}
+
+/* =============================================
+   PANEL DE COLABORADORES
+   ============================================= */
+.colabs-panel {
+  background: var(--wb);
+  border-radius: 1.5vh;
+  box-shadow: 0 0.5vh 2vh var(--bdr);
+  overflow: hidden;
+}
+
+.colabs-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vh;
+}
+
+/* Tarjeta Individual de Colaborador */
+.colab-card {
+  background: var(--bg);
+  border-radius: 1.2vh;
+  padding: 1.5vh 1.2vw;
+  box-shadow: 0.1vh 0.1vh 0.3vh var(--bdr);
+  transition: all var(--trans_m);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Barra Superior de Color en Tarjeta */
+.colab-card::before {
+  content: '';
+  position: absolute;
+  top: 0; 
+  left: 0; 
+  right: 0;
+  height: 0.4vh;
+  background: linear-gradient(90deg, var(--mco), var(--hv));
+}
+
+.colab-card:hover {
+  transform: translateY(-0.3vh);
+  box-shadow: 0 0.8vh 2vh var(--bdr);
+}
+
+/* Header de Colaborador (Avatar + Info) */
+.colab-header {
+  display: flex;
+  align-items: center;
+  gap: 1vh;
+  margin-bottom: 1.2vh;
+}
+
+.colab-avatar {
+  width: 5vh;
+  height: 5vh;
+  border-radius: 50%;
+  border: 0.3vh solid var(--mco);
+  object-fit: cover;
+}
+
+.colab-info h3 {
+  color: var(--bg2);
+  font-size: clamp(0.9rem, 1.05vw, 1rem);
+  font-weight: 700;
+  margin-bottom: 0.2vh;
+}
+
+.colab-info p {
+  color: var(--bg2);
+  font-size: clamp(0.7rem, 0.85vw, 0.8rem);
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+/* Estadísticas del Colaborador */
+.colab-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1vh;
+}
+
+.stat-item {
+  background: rgba(255, 255, 255, 0.5);
+  padding: 0.8vh 0.8vw;
+  border-radius: 0.8vh;
+  text-align: center;
+}
+
+.stat-value {
+  display: block;
+  color: var(--bg2);
+  font-size: clamp(1.2rem, 1.5vw, 1.4rem);
+  font-weight: 800;
+  font-family: var(--ff_rub);
+}
+
+.stat-label {
+  display: block;
+  color: var(--bg2);
+  font-size: clamp(0.65rem, 0.8vw, 0.75rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+/* =============================================
+   TARJETAS INFORMATIVAS (4 Cards)
+   ============================================= */
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2vh;
+  margin-bottom: 2vh;
+}
+
+.info-card {
+  background: var(--wb);
+  border-radius: 1.5vh;
+  box-shadow: 0 0.5vh 2vh var(--bdr);
+  padding: 2vh 1.5vw;
+  display: flex;
+  align-items: center;
+  gap: 1.5vh;
+  transition: all var(--trans_m);
+}
+
+.info-card:hover {
+  transform: translateY(-0.5vh);
+  box-shadow: 0 1vh 3vh var(--bdr);
+}
+
+/* Icono de Tarjeta Informativa */
+.card-icon {
+  width: 6vh;
+  height: 6vh;
+  border-radius: 1.2vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(1.5rem, 2vw, 1.8rem);
+}
+
+/* Contenido de Tarjeta */
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vh;
+}
+
+.card-value {
+  font-size: clamp(1.5rem, 2vw, 1.8rem);
+  font-weight: 800;
+  color: var(--bg2);
+  font-family: var(--ff_rub);
+}
+
+.card-label {
+  font-size: clamp(0.75rem, 0.9vw, 0.85rem);
+  font-weight: 600;
+  color: var(--bg4);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+/* =============================================
+   SECCIÓN DE REGISTROS (TABLA)
+   ============================================= */
+.registros-section {
+  background: var(--wb);
+  border-radius: 1.5vh;
+  box-shadow: 0 0.5vh 2vh var(--bdr);
+  padding: 2vh 2vw;
+}
+
+/* Header de Sección con Filtros */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2vh;
+  flex-wrap: wrap;
+  gap: 1.5vh;
+}
+
+.section-header h2 {
+  color: var(--bg2);
+  font-size: clamp(1.3rem, 1.6vw, 1.5rem);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 1vh;
+}
+
+.section-header h2 i { 
+  color: var(--bg2); 
+}
+
+/* Contenedor de Filtros */
+.filters-container {
+  display: flex;
+  gap: 1.5vh;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vh;
+}
+
+.filter-group label {
+  font-size: clamp(0.7rem, 0.85vw, 0.8rem);
+  font-weight: 600;
+  color: var(--bg4);
+}
+
+.filter-group select {
+  padding: 0.8vh 1.2vw;
+  border: 0.2vh solid var(--bdr);
+  border-radius: 0.8vh;
+  background: var(--blanc);
+  color: var(--txe);
+  font-size: clamp(0.8rem, 0.95vw, 0.9rem);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--trans_m);
+}
+
+.filter-group select:focus {
+  outline: none;
+  border-color: var(--mco);
+  box-shadow: 0 0 0 0.2vh var(--bg1);
+}
+
+/* Contenedor de Tabla con Scroll */
+.table-container {
+  overflow-x: auto;
+  border-radius: 1vh;
+  margin-bottom: 2vh;
+}
+
+/* Tabla de Registros */
+.registros-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: clamp(0.75rem, 0.9vw, 0.85rem);
+}
+
+.registros-table thead {
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.registros-table th {
+  color: var(--bg2);
+  font-weight: 700;
+  text-align: left;
+  padding: 1.2vh 1vw;
+  font-size: clamp(0.75rem, 0.9vw, 0.85rem);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  border-bottom: 0.2vh solid var(--bdr);
+}
+
+.registros-table th i {
+  color: var(--bg2);
+  margin-right: 0.5vw;
+}
+
+.registros-table tbody tr {
+  border-bottom: 0.1vh solid var(--bg);
+  transition: all var(--trans_r);
+}
+
+.registros-table tbody tr:hover {
+  background: var(--bg);
+}
+
+.registros-table td {
+  padding: 1.2vh 1vw;
+  color: var(--tx);
+  vertical-align: middle;
+}
+
+/* Badges/Etiquetas en Tabla */
+.badge {
+  display: inline-block;
+  padding: 0.4vh 0.8vw;
+  border-radius: 0.6vh;
+  font-size: clamp(0.7rem, 0.85vw, 0.8rem);
+  font-weight: 600;
+}
+
+.badge-tipo { 
+  background: var(--bg1); 
+  color: var(--bg2); 
+}
+
+.badge-reserva { 
+  background: rgba(59, 130, 246, 0.1); 
+  color: #1e40af; 
+}
+
+/* Botones de Acción en Tabla */
+.action-buttons {
+  display: flex;
+  gap: 0.6vw;
+}
+
+.btn-action {
+  padding: 0.6vh 0.8vw;
+  border: none;
+  border-radius: 0.6vh;
+  cursor: pointer;
+  transition: all var(--trans_m);
+  font-size: clamp(0.85rem, 1vw, 0.95rem);
+}
+
+/* Botón Ver (Verde) */
+.btn-view {
+  background: rgba(34, 197, 94, 0.1);
+  color: var(--exito);
+}
+
+.btn-view:hover {
+  background: var(--exito);
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Botón Editar (Azul) */
+.btn-edit {
+  background: rgba(59, 130, 246, 0.1);
+  color: #2563eb;
+}
+
+.btn-edit:hover {
+  background: #2563eb;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Botón Eliminar (Rojo) */
+.btn-delete {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--error);
+}
+
+.btn-delete:hover {
+  background: var(--error);
+  color: white;
+  transform: scale(1.05);
+}
+
+/* =============================================
+   PAGINACIÓN
+   ============================================= */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.8vh;
+  align-items: center;
+}
+
+.page-btn {
+  padding: 0.8vh 1.2vw;
+  border: 0.15vh solid var(--bdr);
+  background: var(--blanc);
+  color: var(--tx);
+  border-radius: 0.6vh;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: clamp(0.8rem, 0.95vw, 0.9rem);
+  transition: all var(--trans_m);
+}
+
+.page-btn:hover {
+  background: var(--bg);
+  border-color: var(--mco);
+}
+
+.page-btn.active {
+  background: linear-gradient(135deg, var(--mco), var(--hv));
+  color: var(--txa);
+  border-color: var(--mco);
+}
+
+.page-info {
+  color: var(--tx);
+  font-weight: 600;
+  font-size: clamp(0.8rem, 0.95vw, 0.9rem);
+}
+
+/* =============================================
+   TOAST DE NOTIFICACIÓN
+   ============================================= */
+.success-toast {
+  position: fixed;
+  top: 10vh;
+  right: 2vw;
+  background: linear-gradient(135deg, var(--exito), #16a34a);
+  color: white;
+  padding: 1.5vh 2vw;
+  border-radius: 1vh;
+  box-shadow: 0 0.5vh 2vh rgba(34, 197, 94, 0.4);
+  display: none;
+  align-items: center;
+  gap: 1vh;
+  font-weight: 600;
+  z-index: 2000;
+  animation: slideIn 0.4s ease;
+}
+
+@keyframes slideIn {
+  from { 
+    transform: translateX(100%); 
+    opacity: 0; 
+  }
+  to { 
+    transform: translateX(0); 
+    opacity: 1; 
+  }
+}
+
+.success-toast i { 
+  font-size: 1.2em; 
+}
+
+/* =============================================
+   RESPONSIVE DESIGN
+   ============================================= */
+
+/* Tablets y Pantallas Medianas (hasta 1200px) */
+@media (max-width: 1200px) {
+  .main-layout {
+    grid-template-columns: 1fr;
+    gap: 2vh;
+  }
+  
+  .separator { 
+    display: none; 
+  }
+  
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .info-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Móviles y Pantallas Pequeñas (hasta 768px) */
+@media (max-width: 768px) {
+  .header-container {
+    flex-wrap: wrap;
+    gap: 1vh;
+  }
+
+  .header-left {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .header-right {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-group.span-2,
+  .form-group.span-3 {
+    grid-column: span 1;
+  }
+
+  .info-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .filters-container {
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .filter-group {
+    width: 100%;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+    gap: 0.5vh;
+  }
+
+  .registros-table {
+    font-size: clamp(0.7rem, 0.85vw, 0.8rem);
+  }
+
+  .registros-table th,
+  .registros-table td {
+    padding: 1vh 0.8vw;
+  }
+}
