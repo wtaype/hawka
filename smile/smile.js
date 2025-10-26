@@ -5,7 +5,7 @@ import { auth, db } from '../firebase/init.js';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { collection, doc, getDocs, getDoc, setDoc, deleteDoc, serverTimestamp, query, where, orderBy } from 'firebase/firestore';
 import { Mensaje, Notificacion, savels, getls, removels, showLoading } from '../widev.js';
-import { htmSm, fmtFecj, calFecj, setFechas } from './bodysm.js';
+import { htmSm, fmtFecj, calFecj, setFechas } from './mihtml.js';
 
 // ESTADO (6-7 caracteres)
 let usuauth = null;
