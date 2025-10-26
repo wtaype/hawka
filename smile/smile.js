@@ -141,7 +141,7 @@ const guaRegi = async e => {
       fechaIngreso: $('#fechaIngreso').val(),
       fechaSalida: $('#fechaSalida').val(),
       tipoReserva: $('#tipoReserva').val(),
-      bookingId: $('#bookingId').val()||'',
+      reservaId: $('#reservaId').val()||'',
       observaciones: $('#observaciones').val()||'',
       colaborador: (datuser?.nombre || datuser?.usuario || usuauth.displayName),
       fechaRegistro: serverTimestamp()

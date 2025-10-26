@@ -35,19 +35,36 @@ const htmSm = () => `
       <div class="panel-body">
         <form id="regForm">
           <div class="form-grid">
+
             <div class="form-group">
               <label><i class="fa-solid fa-building"></i> Registro en</label>
               <select id="registroEn" required>
-                <option value="HClaudia" selected>HClaudia</option>
                 <option value="Hawka">Hawka</option>
               </select>
             </div>
-            <div class="form-group span-2">
-              <label><i class="fa-solid fa-user"></i> Cliente</label>
+
+            <div class="form-group">
+              <label><i class="fa-solid fa-hashtag"></i> Numero de Reserva</label>
+              <input type="text" id="reservaId" placeholder="Opcional">
+            </div>
+
+            <div class="form-group">
+              <label><i class="fa-solid fa-clipboard-list"></i> Fuente</label>
+              <select id="tipoReserva" required>
+                <option value="Directo">Directo</option>
+                <option value="BOOKING">Booking</option>
+                <option value="Airbnb">Airbnb</option>
+                <option value="Agencia">Agencia</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label><i class="fa-solid fa-user"></i> Nombres del Cliente</label>
               <input type="text" id="nombreCliente" placeholder="Nombre completo" required>
             </div>
+
             <div class="form-group">
-              <label><i class="fa-solid fa-id-card"></i> Tipo Doc</label>
+              <label><i class="fa-solid fa-id-card"></i> Tipo de Documento</label>
               <select id="tipoDocumento" required>
                 <option value="DNI">DNI</option>
                 <option value="Carnet Extranjeria">Carnet Extranjeria</option>
@@ -55,80 +72,93 @@ const htmSm = () => `
                 <option value="RUC">RUC</option>
               </select>
             </div>
+            
             <div class="form-group">
-              <label><i class="fa-solid fa-hashtag"></i> N° Doc</label>
+              <label><i class="fa-solid fa-hashtag"></i> N° Documento</label>
               <input type="text" id="numDocumento" placeholder="Ingrese documento" required>
             </div>
+
             <div class="form-group">
-              <label><i class="fa-solid fa-phone"></i> Celular</label>
-              <input type="tel" id="celular" placeholder="987654321" required>
-            </div>
-            <div class="form-group">
-              <label><i class="fa-solid fa-door-open"></i> Habitación</label>
-              <input type="text" id="numHabitacion" placeholder="Ej: 101">
-            </div>
-            <div class="form-group">
-              <label><i class="fa-solid fa-bed"></i> Tipo Hab</label>
+              <label><i class="fa-solid fa-bed"></i> Tipo Habitación</label>
               <select id="tipoHabitacion" required>
                 <option value="">Seleccione...</option>
-                <option value="Simple">Simple</option>
-                <option value="Doble">Doble</option>
                 <option value="Triple">Triple</option>
-                <option value="Matrimonial">Matrimonial</option>
+                <option value="DobleSimple">Doble Simple</option>
+                <option value="DobleSuperior">Doble Superior</option>
+                <option value="MatrimonialSimple">Matrimonial Simple</option>
+                <option value="MatrimonialSuperior">Matrimonial Superior</option>
                 <option value="Matrimonial Queen">Matrimonial Queen</option>
               </select>
             </div>
+
+            <div class="form-group">
+              <label><i class="fa-solid fa-door-open"></i> N° Habitación</label>
+              <input type="text" id="numHabitacion" placeholder="Ej: 101">
+            </div>
+
             <div class="form-group">
               <label><i class="fa-solid fa-dollar-sign"></i> Precio</label>
               <input type="number" id="precio" step="0.01" min="0" placeholder="150.00" required>
             </div>
+
             <div class="form-group">
               <label><i class="fa-solid fa-coins"></i> Moneda</label>
               <select id="moneda" required>
                 <option value="Soles">Soles (S/)</option>
                 <option value="Dolares">Dólares (US$)</option>
-                <option value="Euros">Euros (€)</option>
               </select>
             </div>
+
+
             <div class="form-group">
               <label><i class="fa-solid fa-credit-card"></i> Pago</label>
               <select id="metodoPago" required>
-                <option value="Tarjeta">Tarjeta</option>
-                <option value="Transferencia">Transferencia</option>
+                <option value="Tarjeta">Tarjeta Débito/Crédito</option>
+                <option value="Efectivo">Efectivo</option>
                 <option value="Yape">Yape</option>
                 <option value="Plin">Plin</option>
-                <option value="Efectivo">Efectivo</option>
+                <option value="Transferencia">Transferencia Bancaria</option>
               </select>
             </div>
+
             <div class="form-group">
-              <label><i class="fa-solid fa-calendar-days"></i> Días</label>
+              <label><i class="fa-solid fa-utensils"></i> Incluye Desayuno</label>
+              <select id="desayuno" required>
+                <option value="si">Si Incluye</option>
+                <option value="no">No Incluye</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label><i class="fa-solid fa-calendar-days"></i> Noches Registrados</label>
               <input type="number" id="diasReservados" min="1" value="1" required>
             </div>
+
             <div class="form-group">
               <label><i class="fa-solid fa-calendar-day"></i> Check-in</label>
               <input type="date" id="fechaIngreso" required>
             </div>
+
             <div class="form-group">
               <label><i class="fa-solid fa-calendar-check"></i> Check-out</label>
               <input type="date" id="fechaSalida" required>
             </div>
-            <div class="form-group">
-              <label><i class="fa-solid fa-clipboard-list"></i> Fuente</label>
-              <select id="tipoReserva" required>
-                <option value="Directo">Directo</option>
-                <option value="BOOKING">BOOKING</option>
-                <option value="Airbnb">Airbnb</option>
-                <option value="Agencia">Agencia</option>
-              </select>
+
+           <div class="form-group">
+              <label><i class="fa-solid fa-phone"></i> Celular(Opcional)</label>
+              <input type="tel" id="celular" placeholder="987654321">
             </div>
+
+           <div class="form-group">
+              <label><i class="fa-solid fa-car"></i> Placa del Carro(Opcional)</label>
+              <input type="tel" id="carroPlaca" placeholder="XRW134">
+            </div>            
+
             <div class="form-group">
-              <label><i class="fa-solid fa-hashtag"></i> Booking ID</label>
-              <input type="text" id="bookingId" placeholder="Opcional">
-            </div>
-            <div class="form-group span-2">
-              <label><i class="fa-solid fa-pen"></i> Observaciones</label>
+              <label><i class="fa-solid fa-pen"></i> Comentario(opcional)</label>
               <input type="text" id="observaciones" placeholder="Opcional">
             </div>
+
           </div>
           <button type="submit" class="btn-save">
             <i class="fa-solid fa-check-circle"></i> Guardar
